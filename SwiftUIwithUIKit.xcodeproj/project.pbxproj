@@ -11,6 +11,7 @@
 		E731CE6D261CE6110015E153 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731CE6C261CE6110015E153 /* ContentView.swift */; };
 		E731CE6F261CE6110015E153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E731CE6E261CE6110015E153 /* Assets.xcassets */; };
 		E731CE72261CE6110015E153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E731CE71261CE6110015E153 /* Preview Assets.xcassets */; };
+		E731CE7C261CE8720015E153 /* SliderFromUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E731CE7B261CE8720015E153 /* SliderFromUIKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E731CE6E261CE6110015E153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E731CE71261CE6110015E153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E731CE73261CE6110015E153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E731CE7B261CE8720015E153 /* SliderFromUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFromUIKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E731CE6A261CE6110015E153 /* SwiftUIwithUIKitApp.swift */,
 				E731CE6C261CE6110015E153 /* ContentView.swift */,
+				E731CE7B261CE8720015E153 /* SliderFromUIKit.swift */,
 				E731CE6E261CE6110015E153 /* Assets.xcassets */,
 				E731CE73261CE6110015E153 /* Info.plist */,
 				E731CE70261CE6110015E153 /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E731CE7C261CE8720015E153 /* SliderFromUIKit.swift in Sources */,
 				E731CE6D261CE6110015E153 /* ContentView.swift in Sources */,
 				E731CE6B261CE6110015E153 /* SwiftUIwithUIKitApp.swift in Sources */,
 			);
