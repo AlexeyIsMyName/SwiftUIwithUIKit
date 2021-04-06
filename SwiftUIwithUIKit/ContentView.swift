@@ -9,50 +9,63 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var value = 50.0
-    @State private var targetValue = 0.0
+    @State private var targetValue = 0
     @State private var alertIsPresented = false
     
     private var score: Int {
-        let difference = abs(value - targetValue)
-        return lround(100 - difference)
+        let difference = abs(lround(value) - targetValue)
+        return 100 - difference
     }
     
     var body: some View {
         VStack(spacing: 30) {
-            Text("Подвиньте слайдер как можно ближе к: \(lround(targetValue))")
+            Text("Подвиньте слайдер\nкак можно ближе к: \(targetValue)")
                 .multilineTextAlignment(.center)
             
-            HStack {
-                Text("0")
-                SliderFromUIKit(value: $value, thumbAlpha: Double(score) / 100)
-                Text("100")
-            }
-            
-            Button(action: checkResult) {
+            SliderUI(value: $value, thumbAlpha: score)
+        
+            Button(action: showResult) {
                 Text("Проверь меня!")
             }.alert(isPresented: $alertIsPresented) {
                 Alert(
-                    title: Text("Your Score"),
-                    message: Text("\(score)")
+                    title: Text(
+                        score == 100 ?
+                            "You are the best!" :
+                            "You can do better! Just try!"
+                    ),
+                    message: Text("Your Score is \(score)")
                 )
             }
             
-            Button(action: newRandomValue) {
+            Button(action: newRandomTarget) {
                 Text("Начать заново")
             }
         }
-        .onAppear(perform: newRandomValue)
+        .onAppear(perform: newRandomTarget)
         .padding()
     }
 }
 
 extension ContentView {
-    private func checkResult() {
+    private func showResult() {
         alertIsPresented.toggle()
     }
     
-    private func newRandomValue() {
-        targetValue = Double.random(in: 0...100)
+    private func newRandomTarget() {
+        targetValue = Int.random(in: 0...100)
+    }
+}
+
+struct SliderUI: View {
+    @Binding var value: Double
+    let thumbAlpha: Int // 0..100
+    
+    var body: some View {
+        HStack {
+            Text("0")
+            SliderFromUIKit(value: $value, thumbAlpha: Double(thumbAlpha) / 100)
+            Text("100")
+        }
     }
 }
 

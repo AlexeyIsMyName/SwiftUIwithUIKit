@@ -15,10 +15,8 @@ struct SliderFromUIKit: UIViewRepresentable {
         let slider = UISlider(frame: .zero)
         slider.minimumValue = 0
         slider.maximumValue = 100
-        slider.thumbTintColor = UIColor(red: 1,
-                                        green: 0,
-                                        blue: 0,
-                                        alpha: CGFloat(thumbAlpha))
+        slider.maximumTrackTintColor = .black
+        slider.minimumTrackTintColor = .black
         
         slider.addTarget(
             context.coordinator,
@@ -58,6 +56,6 @@ extension SliderFromUIKit {
 
 struct SliderFromUIKit_Previews: PreviewProvider {
     static var previews: some View {
-        SliderFromUIKit(value: .constant(50), thumbAlpha: 0.5)
+        SliderFromUIKit(value: .constant(50), thumbAlpha: 1)
     }
 }
